@@ -1,0 +1,87 @@
+add 
+mobility-helper 
+animation-interface
+netanim-module.h
+in all programs along with header files from simple-global-routing and rip programs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+put ".......... \n" at the end for delayed printing statements
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+if wrong output gain and again just use different port number
+
+include memset in programs if output comes wrong
+
+
+
+TCP
+int client_fid=accept(fid,NULL,NULL);  ----- need not give client address in serve side
+
+UDP
+server side:
+bind should ve done in udp also
+int len=sizeof(client_address);
+int n=recvfrom(fid, msg, sizeof(msg), 0, (struct sockaddr *) &client_address, &len);
+sendto(fid, msg, n, 0, (struct sockaddr *) &client_address, len);
+client side:
+int length=sizeof(server_address);
+sendto(network_fid, msg, strlen(msg), 0, (struct sockaddr *) &server_address, sizeof(server_address));
+recvfrom(network_fid, msg, sizeof(msg), 0, (struct sockaddr *) &server_address, &length);
+
+
+
+
+CHAT SERVER and CLIENT
+add while loop,memset and exit condition in TCP without changing allignment
+
+MULTICLIENT
+server side:
+in while loop include 
+clients[n]=client_fid;
+n++;
+The pthread_create should send NULL in second place and no & for receive function
+client side:
+fgets(msg,250,stdin)>0 should be the while loop condition in main
+fputs should be used to print the output in the receive function
+The pthread_create should send NULL in second place and & for receive function
+argc is int and argv is character pointer. syntax is int main(int argc, char* argv[])
+
+
+
+STOP AND WAIT   &    GO BACK N
+without changing the allignment change char to int and add exit condition in chat without exit condition
+in scanf, send, read, memset use &msg and sizeof(msg)
+
+
+
+
+DVR
+IN every for loop both dist and from should be present
